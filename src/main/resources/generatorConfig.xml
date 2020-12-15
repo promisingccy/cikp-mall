@@ -35,7 +35,7 @@
         <!--指定生成mapper接口的的路径-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.cikp.mall.mybatisFile.mapper"
                              targetProject="src\main\java"/>
-        <!--生成全部表tableName设为%-->
+        <!--多张表使用多个table标签 生成全部表tableName设为%-->
         <table tableName="ums_admin">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
