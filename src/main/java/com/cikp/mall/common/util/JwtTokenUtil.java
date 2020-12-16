@@ -1,4 +1,4 @@
-package com.cikp.mall.util;
+package com.cikp.mall.common.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -15,7 +15,15 @@ import java.util.Map;
 
 /**
  * @ClassName JwtTokenUtil
- * @Description //TODO
+ * @Description
+ *  * JwtToken生成的工具类
+ *  * JWT token的格式：header.payload.signature
+ *  * header的格式（算法、token的类型）：
+ *  * {"alg": "HS512","typ": "JWT"}
+ *  * payload的格式（用户名、创建时间、生成时间）：
+ *  * {"sub":"wang","created":1489079981393,"exp":1489684781}
+ *  * signature的生成算法：
+ *  * HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
  * @Author ccy
  * @Date 2020/12/15 19:25
  * @Version 1.0

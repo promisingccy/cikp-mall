@@ -6,7 +6,7 @@ import com.cikp.mall.mybatisFile.model.UmsAdmin;
 import com.cikp.mall.mybatisFile.model.UmsAdminExample;
 import com.cikp.mall.mybatisFile.model.UmsPermission;
 import com.cikp.mall.service.UmsAdminService;
-import com.cikp.mall.util.JwtTokenUtil;
+import com.cikp.mall.common.util.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;

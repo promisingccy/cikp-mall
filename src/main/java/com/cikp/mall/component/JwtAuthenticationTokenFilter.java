@@ -1,6 +1,6 @@
 package com.cikp.mall.component;
 
-import com.cikp.mall.util.JwtTokenUtil;
+import com.cikp.mall.common.util.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

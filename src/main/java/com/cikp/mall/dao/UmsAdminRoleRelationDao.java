@@ -7,7 +7,8 @@ import java.util.List;
 
 /**
  * @ClassName UmsAdminRoleRelationDao
- * @Description 后台用户与角色管理自定义Dao
+ * @Description 后台用户与角色管理自定义Dao  实际上这个mapper的作用，需加入扫描
+ *          MapperScan({"com.cikp.mall.mybatisFile.mapper", "com.cikp.mall.dao"})
  * @Author ccy
  * @Date 2020/12/15 20:20
  * @Version 1.0

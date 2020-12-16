@@ -1,13 +1,5 @@
 package com.cikp.mall.dto;
 
-/**
- * @ClassName AdminUserDetails
- * @Description SpringSecurity需要的用户详情
- * @Author ccy
- * @Date 2020/12/15 20:14
- * @Version 1.0
- **/
-
 import com.cikp.mall.mybatisFile.model.UmsAdmin;
 import com.cikp.mall.mybatisFile.model.UmsPermission;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,9 +11,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- *
- * Created by macro on 2018/4/26.
- */
+ * @ClassName AdminUserDetails
+ * @Description SpringSecurity需要的用户详情
+ * @Author ccy
+ * @Date 2020/12/15 20:14
+ * @Version 1.0
+ **/
 public class AdminUserDetails implements UserDetails {
     private UmsAdmin umsAdmin;
     private List<UmsPermission> permissionList;
