@@ -1,42 +1,63 @@
 package com.cikp.mall.mybatisFile.model;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.io.Serializable;
 
-@ApiModel(value="PmsBrand对象", description="品牌对象")
 public class PmsBrand implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "名称")
     private String name;
 
-    @ApiModelProperty(value = "首字母")
+    /**
+     * 首字母
+     *
+     * @mbg.generated
+     */
     private String firstLetter;
 
-    @ApiModelProperty(value = "名称")
     private Integer sort;
 
-    @ApiModelProperty(value = "是否为品牌制造商")
+    /**
+     * 是否为品牌制造商：0->不是；1->是
+     *
+     * @mbg.generated
+     */
     private Integer factoryStatus;
 
-    @ApiModelProperty(value = "是否显示")
     private Integer showStatus;
 
-    @ApiModelProperty(value = "产品数量")
+    /**
+     * 产品数量
+     *
+     * @mbg.generated
+     */
     private Integer productCount;
 
-    @ApiModelProperty(value = "产品评论数量")
+    /**
+     * 产品评论数量
+     *
+     * @mbg.generated
+     */
     private Integer productCommentCount;
 
-    @ApiModelProperty(value = "品牌logo")
+    /**
+     * 品牌logo
+     *
+     * @mbg.generated
+     */
     private String logo;
 
-    @ApiModelProperty(value = "专区大图")
+    /**
+     * 专区大图
+     *
+     * @mbg.generated
+     */
     private String bigPic;
 
-    @ApiModelProperty(value = "品牌故事")
+    /**
+     * 品牌故事
+     *
+     * @mbg.generated
+     */
     private String brandStory;
 
     private static final long serialVersionUID = 1L;
