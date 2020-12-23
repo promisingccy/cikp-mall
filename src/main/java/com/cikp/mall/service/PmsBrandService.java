@@ -1,5 +1,6 @@
 package com.cikp.mall.service;
 
+import com.cikp.mall.dto.PmsBrandDto;
 import com.cikp.mall.mybatisFile.model.PmsBrand;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
 public interface PmsBrandService {
     List<PmsBrand> listAllBrand();
 
-    int createBrand(PmsBrand brand);
+    int createBrand(PmsBrandDto brand);
 
     int updateBrand(Long id, PmsBrand brand);
 

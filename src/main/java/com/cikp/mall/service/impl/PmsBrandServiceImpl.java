@@ -1,5 +1,7 @@
 package com.cikp.mall.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import com.cikp.mall.dto.PmsBrandDto;
 import com.cikp.mall.mybatisFile.mapper.PmsBrandMapper;
 import com.cikp.mall.mybatisFile.model.PmsBrand;
 import com.cikp.mall.mybatisFile.model.PmsBrandExample;
@@ -28,8 +30,10 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     }
 
     @Override
-    public int createBrand(PmsBrand brand) {
-        return brandMapper.insertSelective(brand);
+    public int createBrand(PmsBrandDto dto) {
+        PmsBrand pmsBrand = new PmsBrand();
+        BeanUtil.copyProperties(dto, pmsBrand);
+        return brandMapper.insertSelective(pmsBrand);
     }
 
     @Override
