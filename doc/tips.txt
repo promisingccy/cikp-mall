@@ -1,0 +1,1 @@
+1. spring boot 2.3.7.RELEASE中，使用validation需要显式引入pom；
