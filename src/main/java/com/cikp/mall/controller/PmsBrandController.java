@@ -62,14 +62,14 @@ public class PmsBrandController {
     @PreAuthorize("hasAuthority('pms:brand:create')")
     public CommonResult createBrand(@Validated @RequestBody PmsBrandDto pmsBrand, BindingResult result) {
         CommonResult commonResult;
-        int count = pmsBrandService.createBrand(pmsBrand);
-        if (count == 1) {
+        // int count = pmsBrandService.createBrand(pmsBrand);
+        // if (count == 1) {
             commonResult = CommonResult.success(pmsBrand);
             LOGGER.debug("createBrand success:{}", pmsBrand);
-        } else {
-            commonResult = CommonResult.failed("操作失败");
-            LOGGER.debug("createBrand failed:{}", pmsBrand);
-        }
+        // } else {
+        //     commonResult = CommonResult.failed("操作失败");
+        //     LOGGER.debug("createBrand failed:{}", pmsBrand);
+        // }
         return commonResult;
     }
 
