@@ -15,9 +15,9 @@ import java.util.List;
 public interface PmsBrandService {
     List<PmsBrand> listAllBrand();
 
-    int createBrand(PmsBrandDto brand);
+    void createBrand(PmsBrandDto brand);
 
-    int updateBrand(Long id, PmsBrand brand);
+    void updateBrand(Long id, PmsBrandDto brand);
 
     int deleteBrand(Long id);
 

@@ -11,8 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -60,33 +58,17 @@ public class PmsBrandController {
     @ApiOperation("创建品牌")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @PreAuthorize("hasAuthority('pms:brand:create')")
-    public CommonResult createBrand(@Validated @RequestBody PmsBrandDto pmsBrand, BindingResult result) {
-        CommonResult commonResult;
-        // int count = pmsBrandService.createBrand(pmsBrand);
-        // if (count == 1) {
-            commonResult = CommonResult.success(pmsBrand);
-            LOGGER.debug("createBrand success:{}", pmsBrand);
-        // } else {
-        //     commonResult = CommonResult.failed("操作失败");
-        //     LOGGER.debug("createBrand failed:{}", pmsBrand);
-        // }
-        return commonResult;
+    public CommonResult createBrand(@Valid @RequestBody PmsBrandDto pmsBrand) {
+        pmsBrandService.createBrand(pmsBrand);
+        return CommonResult.success(pmsBrand);
     }
 
     @ApiOperation("更新品牌")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @PreAuthorize("hasAuthority('pms:brand:update')")
-    public CommonResult updateBrand(@PathVariable("id") Long id, @RequestBody PmsBrand pmsBrandDto, BindingResult result) {
-        CommonResult commonResult;
-        int count = pmsBrandService.updateBrand(id, pmsBrandDto);
-        if (count == 1) {
-            commonResult = CommonResult.success(pmsBrandDto);
-            LOGGER.debug("updateBrand success:{}", pmsBrandDto);
-        } else {
-            commonResult = CommonResult.failed("操作失败");
-            LOGGER.debug("updateBrand failed:{}", pmsBrandDto);
-        }
-        return commonResult;
+    public CommonResult updateBrand(@PathVariable("id") Long id, @Valid @RequestBody PmsBrandDto pmsBrand) {
+        pmsBrandService.updateBrand(id, pmsBrand);
+        return CommonResult.success(pmsBrand);
     }
 
     @ApiOperation("删除品牌")

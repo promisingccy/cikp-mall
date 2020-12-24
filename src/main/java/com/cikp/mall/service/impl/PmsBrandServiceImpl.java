@@ -2,6 +2,7 @@ package com.cikp.mall.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.cikp.mall.dto.PmsBrandDto;
+import com.cikp.mall.exception.Asserts;
 import com.cikp.mall.mybatisFile.mapper.PmsBrandMapper;
 import com.cikp.mall.mybatisFile.model.PmsBrand;
 import com.cikp.mall.mybatisFile.model.PmsBrandExample;
@@ -30,16 +31,24 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     }
 
     @Override
-    public int createBrand(PmsBrandDto dto) {
+    public void createBrand(PmsBrandDto dto) {
         PmsBrand pmsBrand = new PmsBrand();
         BeanUtil.copyProperties(dto, pmsBrand);
-        return brandMapper.insertSelective(pmsBrand);
+        int count = brandMapper.insertSelective(pmsBrand);
+        if(count < 1){
+            Asserts.fail("操作失败");
+        }
     }
 
     @Override
-    public int updateBrand(Long id, PmsBrand brand) {
+    public void updateBrand(Long id, PmsBrandDto dto) {
+        PmsBrand brand = new PmsBrand();
+        BeanUtil.copyProperties(dto, brand);
         brand.setId(id);
-        return brandMapper.updateByPrimaryKeySelective(brand);
+        int count = brandMapper.updateByPrimaryKeySelective(brand);
+        if(count < 1){
+            Asserts.fail("操作失败");
+        }
     }
 
     @Override
