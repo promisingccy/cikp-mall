@@ -1,8 +1,9 @@
-############# install & config:
+############# windows install & config:
 1. 安装Erlang，下载地址：http://erlang.org/download/otp_win64_21.3.exe
 2. 安装RabbitMQ，下载地址：https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.14/rabbitmq-server-3.7.14.exe
 3. 安装完成后，进入RabbitMQ安装目录下的sbin目录，在地址栏输入cmd并回车启动命令行，然后输入以下命令启动管理功能：
     rabbitmq-plugins enable rabbitmq_management
+    ./rabbitmq-plugins.bat enable rabbitmq_management
 4. 访问RabbitMQ管理页面地址， http://localhost:15672/ 默认账号密码登录：guest guest
     创建帐号并设置其角色为管理员：mall mall
 5. 创建一个新的虚拟host为：/mall
@@ -12,21 +13,7 @@
 ############# 5种消息模式:
 简单模式-SimpleRabbitConfig
     简单模式是最简单的消息模式，它包含一个生产者、一个消费者和一个队列。生产者向队列里发送消息，消费者从队列中获取消息并消费。
-    /rabbit/simple
-    2021-01-04 17:48:40.151  INFO 12964 --- [nio-8080-exec-5] com.cikp.mall.mq.SimpleSender            :  [x] Sent 'Hello World!'
-    2021-01-04 17:48:40.152  INFO 12964 --- [ntContainer#0-1] com.cikp.mall.mq.SimpleReceiver          :  [x] Received 'Hello World!'
-    2021-01-04 17:48:41.151  INFO 12964 --- [nio-8080-exec-5] com.cikp.mall.mq.SimpleSender            :  [x] Sent 'Hello World!'
-    2021-01-04 17:48:41.156  INFO 12964 --- [ntContainer#0-1] com.cikp.mall.mq.SimpleReceiver          :  [x] Received 'Hello World!'
-    2021-01-04 17:48:42.156  INFO 12964 --- [nio-8080-exec-5] com.cikp.mall.mq.SimpleSender            :  [x] Sent 'Hello World!'
-    2021-01-04 17:48:42.160  INFO 12964 --- [ntContainer#0-1] com.cikp.mall.mq.SimpleReceiver          :  [x] Received 'Hello World!'
-    2021-01-04 17:48:43.157  INFO 12964 --- [nio-8080-exec-5] com.cikp.mall.mq.SimpleSender            :  [x] Sent 'Hello World!'
-    2021-01-04 17:48:43.158  INFO 12964 --- [ntContainer#0-1] com.cikp.mall.mq.SimpleReceiver          :  [x] Received 'Hello World!'
-    2021-01-04 17:48:44.158  INFO 12964 --- [nio-8080-exec-5] com.cikp.mall.mq.SimpleSender            :  [x] Sent 'Hello World!'
-    2021-01-04 17:48:44.161  INFO 12964 --- [ntContainer#0-1] com.cikp.mall.mq.SimpleReceiver          :  [x] Received 'Hello World!'
-    2021-01-04 17:48:45.159  INFO 12964 --- [nio-8080-exec-5] com.cikp.mall.mq.SimpleSender            :  [x] Sent 'Hello World!'
-    2021-01-04 17:48:45.161  INFO 12964 --- [ntContainer#0-1] com.cikp.mall.mq.SimpleReceiver          :  [x] Received 'Hello World!'
-    2021-01-04 17:48:46.161  INFO 12964 --- [nio-8080-exec-5] com.cikp.mall.mq.SimpleSender            :  [x] Sent 'Hello World!'
-    2021-01-04 17:48:46.164  INFO 12964 --- [ntContainer#0-1] com.cikp.mall.mq.SimpleReceiver          :  [x] Received 'Hello World!'
+    api: /rabbit/simple
 
 工作模式-WorkRabbitConfig
     工作模式是指向多个互相竞争的消费者发送消息的模式，它包含一个生产者、两个消费者和一个队列。两个消费者同时绑定到一个队列上去，当消费者获取消息处理耗时任务时，空闲的消费者从队列中获取并消费消息。
