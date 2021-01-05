@@ -1,4 +1,4 @@
-package com.cikp.mall.mq;
+package com.cikp.mall.mq.pattern01simple;
 
 /**
  * @ClassName SimpleReceiver
@@ -17,6 +17,15 @@ public class SimpleReceiver {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SimpleReceiver.class);
 
+    /**
+     [x] Received 'Hello World!'
+     [x] Received 'Hello World!'
+     [x] Received 'Hello World!'
+     [x] Received 'Hello World!'
+     [x] Received 'Hello World!'
+     [x] Received 'Hello World!'
+     [x] Received 'Hello World!'
+     */
     @RabbitHandler
     public void receive(String in) {
         LOGGER.info(" [x] Received '{}'", in);

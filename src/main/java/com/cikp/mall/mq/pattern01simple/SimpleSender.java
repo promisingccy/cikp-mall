@@ -1,4 +1,4 @@
-package com.cikp.mall.mq;
+package com.cikp.mall.mq.pattern01simple;
 
 /**
  * @ClassName SimpleSender
@@ -21,6 +21,15 @@ public class SimpleSender {
 
     private static final String queueName="simple.hello";
 
+    /**
+     [x] Sent 'Hello World!'
+     [x] Sent 'Hello World!'
+     [x] Sent 'Hello World!'
+     [x] Sent 'Hello World!'
+     [x] Sent 'Hello World!'
+     [x] Sent 'Hello World!'
+     [x] Sent 'Hello World!'
+     */
     public void send() {
         String message = "Hello World!";
         this.template.convertAndSend(queueName, message);
